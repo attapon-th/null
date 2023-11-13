@@ -3,7 +3,7 @@
 version: "3"
 
 vars:
-  Version: 4.0
+  Version: 1.0
   Build: 1
   Tag: v{{.Version}}.{{.Build}}
 
