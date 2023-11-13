@@ -1,0 +1,19 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  Version: 4.0.0
+  Build: 1
+  Tag: v${Version}-${Build}
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
+    silent: true
+
+  push-tag:
+    cmds:
+      - git tag -a v${Version} -m "v${Version}"
+      - git push origin v${Version}
