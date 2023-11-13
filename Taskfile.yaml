@@ -3,9 +3,9 @@
 version: "3"
 
 vars:
-  Version: 4.0.0
+  Version: 4.0
   Build: 1
-  Tag: v${Version}-${Build}
+  Tag: v{{.Version}}.{{.Build}}
 
 tasks:
   default:
@@ -15,5 +15,6 @@ tasks:
 
   push-tag:
     cmds:
-      - git tag -a v${Version} -m "v${Version}"
-      - git push origin v${Version}
+      - echo {{.Tag}}
+      - git tag -a "{{.Tag}}" -m "{{.Tag}}"
+      - git push origin "{{.Tag}}"
